@@ -123,7 +123,7 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
         
-        let previousAngle = null; // To track changes
+        let previousAngle = null; 
 
         // --- 1. Connection Status ---
         onValue(ref(db, ".info/connected"), (snap) => {
@@ -153,7 +153,7 @@
             // 1. We have a previous value (not the first page load)
             // 2. The value has ACTUALLY changed
             if (previousAngle !== null && angle !== previousAngle) {
-                sendNotification("Pill Dispensed!", "Motor moved to " + angle + "°");
+                sendNotification("Medication Time!", "Please take your medicine.");
             }
             previousAngle = angle;
         });
